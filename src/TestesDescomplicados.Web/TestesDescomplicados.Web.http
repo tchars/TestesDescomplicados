@@ -1,0 +1,6 @@
+@TestesDescomplicados.Web_HostAddress = http://localhost:5228
+
+POST {{TestesDescomplicados.Web_HostAddress}}/criar-usuario/
+Accept: application/json
+
+###
