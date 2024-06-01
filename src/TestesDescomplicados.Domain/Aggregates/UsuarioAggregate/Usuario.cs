@@ -2,7 +2,7 @@
 
 public sealed class Usuario
 {
-    public long Id { get; private set; }
+    public Guid Id { get; private set; }
     public Guid IdUnico { get; private set; }
     public string Nome { get; private set; }
     public string Email { get; private set; }
@@ -16,20 +16,11 @@ public sealed class Usuario
         TipoUsuario = tipoUsuario;
     }
 
-    public Usuario(long id, Guid idUnico, string nome, string email, ETipoUsuario tipoUsuario)
+    public static Usuario? Criar(string nome, string email, ETipoUsuario tipoUsuario)
     {
-        Id = id;
-        IdUnico = idUnico;
-        Nome = nome;
-        Email = email;
-        TipoUsuario = tipoUsuario;
-    }
-
-    public static Usuario Criar(string nome, string email, ETipoUsuario tipoUsuario)
-    {
-        // Aqui devem ocorrer as validações de domínio, por exemplo:
-        // E-mail válido / Nome preenchido
-        // removido para facilitar entendimento
+        // Refatorando para validar o email
+        if (string.IsNullOrWhiteSpace(email))
+            return default;
 
         return new Usuario(Guid.NewGuid(), nome, email, tipoUsuario);
     }

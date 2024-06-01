@@ -22,7 +22,7 @@ public sealed class AdicionarLinhasAoSoftwareUserCase(ISoftwareRepository softwa
 
         return new AdicionarLinhasAoSoftwareResponse
         {
-            SoftwareId = software.IdUnico,
+            SoftwareIdUnico = software.IdUnico,
             DesenvolvedorResponsavel = request.DesenvolvedorResponsavel,
             LinhaAdicionada = request.LinhaNova
         };

@@ -1,8 +1,8 @@
 ﻿namespace TestesDescomplicados.UseCases.Usuarios.BuscarTodos;
 
-public sealed class UsuarioDto(long id, Guid idUnico, string nome, string email)
+public sealed class UsuarioDto(Guid id, Guid idUnico, string nome, string email)
 {
-    public long Id { get; set; } = id;
+    public Guid Id { get; set; } = id;
 
     public Guid IdUnico { get; set; } = idUnico;
 

@@ -6,5 +6,5 @@ public sealed class AdicionarLinhasAoSoftwareResponse
 
     public Guid DesenvolvedorResponsavel { get; set; }
 
-    public Guid SoftwareId { get; set; }
+    public Guid SoftwareIdUnico { get; set; }
 }

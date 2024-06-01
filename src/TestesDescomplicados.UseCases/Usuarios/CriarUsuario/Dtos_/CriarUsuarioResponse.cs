@@ -1,8 +1,8 @@
 ﻿namespace TestesDescomplicados.UseCases.Usuarios.CriarUsuario;
 
-public sealed class CriarUsuarioResponse(long id, Guid idUnico, string nome, string email)
+public sealed class CriarUsuarioResponse(Guid id, Guid idUnico, string nome, string email)
 {
-    public long Id { get; set; } = id;
+    public Guid Id { get; set; } = id;
 
     public Guid IdUnico { get; set; } = idUnico;
 
