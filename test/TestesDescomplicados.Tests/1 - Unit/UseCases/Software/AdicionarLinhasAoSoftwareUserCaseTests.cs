@@ -1,10 +1,9 @@
 ﻿using NSubstitute;
 using NSubstitute.ReturnsExtensions;
-using TestesDescomplicados.Domain.Aggregates.SoftwareAggregate;
 using TestesDescomplicados.Infra.Repositories;
 using TestesDescomplicados.UseCases.Software.AdicionarLinhas;
 
-namespace TestesDescomplicados.Tests.Unit.UseCases;
+namespace TestesDescomplicados.Tests.Unit.UseCases.Software;
 
 public sealed class AdicionarLinhasAoSoftwareUserCaseTests
 {
@@ -46,7 +45,7 @@ public sealed class AdicionarLinhasAoSoftwareUserCaseTests
     public async Task Handle_DeveAdicionarLinha_QuandoSoftwareExistir()
     {
         // Arrange
-        var software = Software.Criar("NomeCliente");
+        var software = TestesDescomplicados.Domain.Aggregates.SoftwareAggregate.Software.Criar("NomeCliente");
         var request = new AdicionarLinhasAoSoftwareRequest(Guid.NewGuid(), software.IdUnico, "Linha");
 
         _softwareRepository
